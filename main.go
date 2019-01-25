@@ -1,16 +1,16 @@
 package main
 
 import (
+	"go-samplemicroservice/home"
+	"go-samplemicroservice/server"
 	"log"
 	"net/http"
 	"os"
-	"samplemicroservice/home"
-	"samplemicroservice/server"
 )
 
 // based on https://youtu.be/bM6N-vgPlyQ
-func main () {
-	logger := log.New(os.Stdout, "my-microservice ", log.LstdFlags | log.Lshortfile)
+func main() {
+	logger := log.New(os.Stdout, "my-microservice ", log.LstdFlags|log.Lshortfile)
 
 	logger.Println("starting service...")
 
@@ -29,4 +29,3 @@ func configureRouting(mux *http.ServeMux, logger *log.Logger) {
 
 	mux.HandleFunc("/", h.Home)
 }
-
